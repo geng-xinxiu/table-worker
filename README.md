@@ -20,14 +20,14 @@
 
 这个工具把上述问题逐条查出来，并给出可直接执行的结论。
 
-## 两个真实使用场景（都已实测）
+## 真实使用场景（已实测）
 
 | 场景 | 表格形态 | 规模 | 结果 |
 |---|---|---|---|
 | 班级团购订单对账 | **转置矩阵**（列是人，行是商品） | 13 人 × 22 种商品 | 31.9 ms；检出重复商品行 1 组；生成催款名单 |
-| VEX 机器人队报名统计 | **标准记录表**（一人一行，表头在第 2 行） | 36 人 | 31.6 ms；0 条质量问题（零误报）；提炼 5 人待补材料 |
 
-> **"0 条问题"是重要结论，不是失败。** 一个天天报警的工具，没人会用第二次。
+> 另外提供一份 `rules/标准记录表.json`，用于「一人一行、表头不在第一行」的普通记录表（无手机号列的场景）。
+> **注意：仓库里只有上面这一单的真实使用记录，其余为自造样例。** 不把没交付过的东西写成成果。
 
 ## 五步复现
 
@@ -51,7 +51,7 @@ python engine\table_worker.py samples\dirty-sample.xlsx --out out\demo
 powershell -ExecutionPolicy Bypass -File one_click.ps1 samples\dirty-sample.xlsx
 
 # 5) 换自己的表：结构不同就改 rules\ 下的规则文件，不用改代码
-python engine\table_worker.py 你的表.xlsx --out out\mine --rules rules\VEX报名表.json
+python engine\table_worker.py 你的表.xlsx --out out\mine --rules rules\标准记录表.json
 ```
 
 ## 三个工具
