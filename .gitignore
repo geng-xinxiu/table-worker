@@ -1,0 +1,15 @@
+# 输出与临时文件
+out/
+result_*/
+__pycache__/
+*.pyc
+
+# 真实客户数据一律不入库
+客户数据/
+evidence/
+*.xlsx
+!samples/*.xlsx
+
+# 系统杂项
+.DS_Store
+Thumbs.db
