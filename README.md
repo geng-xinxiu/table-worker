@@ -13,6 +13,8 @@
 - `report.md`：一页纸的汇总，能直接发到群里
 - `run.log`：程序自己写的过程日志，带毫秒时间戳
 
+详细一点的说明在 [docs/usage.md](docs/usage.md)。
+
 ## 用法
 
 ```bash
